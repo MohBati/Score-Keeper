@@ -7,19 +7,24 @@ const reset = document.querySelector('#reset')
 
 let p1Counter = 0;
 let p2Counter = 0;
+let winningScore = 5;
 
 p1Button.addEventListener('click', function() {
-    p1Counter+= 1;
-    p1Score.textContent = p1Counter;
+    if (p1Counter !== winningScore){
+        p1Counter+= 1;
+        p1Score.textContent = p1Counter;
+    }
 })
 
 p2Button.addEventListener('click', function() {
+    if (p2Counter !== winningScore){
     p2Counter+= 1;
     p2Score.textContent = p2Counter;
+    }
 })
 
 reset.addEventListener('click', function() {
-    p1Score.textContent = '0';
+    p1Score.inne = '0';
     p2Score.textContent = '0';
     p1Counter = 0;
     p2Counter = 0;
