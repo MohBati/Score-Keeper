@@ -6,8 +6,14 @@ const p2Display = document.querySelector('#p2Display')
 let p1Score = 0;
 
 let isGameOver = false;
+let winningScore = 5;
 
 p1Button.addEventListener('click', () => {
-    p1Score += 1;
-    p1Display.textContent = p1Score;
+    if (!isGameOver){
+        p1Score += 1;
+        if (p1Score === winningScore){
+            isGameOver = true;
+        }
+        p1Display.textContent = p1Score;
+    }
 })
