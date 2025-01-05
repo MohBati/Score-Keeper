@@ -8,7 +8,7 @@ const playTo = document.querySelector('#playTo')
 let p1Score = 0;
 let p2Score = 0;
 let isGameOver = false;
-let winningScore = 5;
+let winningScore = 3;
 
 p1Button.addEventListener('click', () => {
     if (!isGameOver){
@@ -32,12 +32,15 @@ p2Button.addEventListener('click', () => {
 
 playTo.addEventListener('change', function () {
     winningScore = parseInt(this.value);
+    reset();
 })
 
-resetBtn.addEventListener('click', () => {
+resetBtn.addEventListener('click', reset)
+
+function reset() {
     p1Score = 0;
     p2Score = 0;
     p1Display.textContent = p1Score;
     p2Display.textContent = p2Score;
     isGameOver = false;
-})
+}
